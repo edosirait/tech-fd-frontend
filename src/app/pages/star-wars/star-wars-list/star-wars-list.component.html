@@ -1,0 +1,3 @@
+<app-table-shared [data]="getFormattedStarWars()" [columns]="[
+    { field: 'name', header: 'Listing Of People' }
+  ]" (rowClick)="onDetail($event)"></app-table-shared>

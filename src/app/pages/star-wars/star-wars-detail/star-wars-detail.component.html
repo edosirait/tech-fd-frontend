@@ -1,0 +1,50 @@
+<div class="text-loading" *ngIf="isLoading">Loading...</div>
+<div class="container-detail" *ngIf="!isLoading && character">
+
+  <div class="container-content-detail">
+    <div class="content-detail">
+      <h1 class="header-detail">{{ character.name }}</h1>
+      <div class="items-detail">
+        <div class="item-detail"><span class="label">Height</span><span class="symbol">:</span><span
+          class="value">{{ character.height }}</span></div>
+        <div class="item-detail"><span class="label">Mass</span><span class="symbol">:</span><span
+          class="value">{{ character.mass }}</span></div>
+        <div class="item-detail"><span class="label">Hair Color</span><span class="symbol">:</span><span
+          class="value">{{ character.hair_color }}</span></div>
+        <div class="item-detail"><span class="label">Skin Color</span><span class="symbol">:</span><span
+          class="value">{{ character.skin_color }}</span></div>
+        <div class="item-detail"><span class="label">Eye Color</span><span class="symbol">:</span><span
+          class="value">{{ character.eye_color }}</span></div>
+        <div class="item-detail"><span class="label">Birth Year</span><span class="symbol">:</span><span
+          class="value">{{ character.birth_year }}</span></div>
+        <div class="item-detail"><span class="label">Gender</span><span class="symbol">:</span><span
+          class="value">{{ character.gender }}</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content-table">
+    <h2>Films</h2>
+    <app-table-shared [data]="films" [columns]="[
+    { field: 'title', header: 'Title' },
+    { field: 'characters', header: 'Characters', isList: true }
+  ]"></app-table-shared>
+
+    <h2>Species</h2>
+    <app-table-shared [data]="getFormattedData(species)" [columns]="[
+    { field: 'name', header: 'Name' }
+  ]" [showHeader]="false"></app-table-shared>
+
+    <h2>Vehicles</h2>
+    <app-table-shared [data]="getFormattedData(vehicles)" [columns]="[
+    { field: 'name', header: 'Name' }
+  ]" [showHeader]="false"></app-table-shared>
+
+    <h2>Starships</h2>
+    <app-table-shared [data]="getFormattedData(starships)" [columns]="[
+    { field: 'name', header: 'Name' }
+  ]" [showHeader]="false"></app-table-shared>
+  </div>
+
+</div>

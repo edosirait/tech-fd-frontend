@@ -1,0 +1,19 @@
+<table class="table-container">
+  <thead *ngIf="showHeader">
+  <tr>
+    <th *ngFor="let col of columns">{{ col.header }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of data" (click)="onRowClick(item)">
+    <td style="cursor: pointer" *ngFor="let col of columns">
+      <ng-container *ngIf="!col.isList">{{ item[col.field] }}</ng-container>
+      <ng-container *ngIf="col.isList">
+        <ul>
+          <li *ngFor="let subItem of item[col.field]">{{ subItem }}</li>
+        </ul>
+      </ng-container>
+    </td>
+  </tr>
+  </tbody>
+</table>
