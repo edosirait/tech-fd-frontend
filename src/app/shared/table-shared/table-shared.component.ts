@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {CommonModule, NgForOf, NgIf} from "@angular/common";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-table-shared',

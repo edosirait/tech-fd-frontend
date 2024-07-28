@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import {StarWarsDetailComponent} from "./pages/star-wars/star-wars-detail/star-wars-detail.component";
 import {StarWarsComponent} from "./pages/star-wars/star-wars.component";
 
 export const routes: Routes = [
